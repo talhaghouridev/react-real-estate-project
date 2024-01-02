@@ -1,6 +1,17 @@
 .c-container {
   justify-content: space-between;
 }
+
+.flexStart-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: fit-content;
+  @media (max-width:900px) {
+  grid-template-columns: 1fr ;
+    max-width: 100%;
+    width: 100%;
+  }
+}
 .c-container > div {
   flex: 1;
 }

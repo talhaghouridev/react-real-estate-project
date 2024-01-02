@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.scss";
+import { FOOTER_LINKS } from "../../constants";
+
 const Footer = () => {
   return (
     <div className="f-wrapper">
@@ -17,10 +19,11 @@ const Footer = () => {
           <span className="primaryText">Information</span>
           <span className="secondaryText">145 New York, FL 5467, USA</span>
           <div className="flexCenter f-menu">
-            <span>Property</span>
-            <span>Services</span>
-            <span>Product</span>
-            <span>About Us</span>
+            {FOOTER_LINKS?.map((item) => (
+             <>
+              <span key={item}>{item}</span>
+             </>
+            ))}
           </div>
         </div>
       </div>

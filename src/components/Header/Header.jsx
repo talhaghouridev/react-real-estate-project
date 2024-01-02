@@ -4,6 +4,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { getMenuStyles } from "../../utils/common";
 import useHeaderColor from "../../hooks/useHeaderColor";
 import OutsideClickHandler from "react-outside-click-handler";
+import { NAV_LINKS } from "../../constants";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -26,10 +27,13 @@ const Header = () => {
             className="flexCenter h-menu"
             style={getMenuStyles(menuOpened)}
           >
-            <a href="#residencies">Residencies</a>
-            <a href="#value">Our Value</a>
-            <a href="#contact-us">Contact Us</a>
-            <a href="#get-started">Get Started</a>
+            {NAV_LINKS?.map((item) => (
+              <>
+                <a key={item.path} href={item.path}>
+                  {item.name}
+                </a>
+              </>
+            ))}
             <button className="button">
               <a href="mailto:zainkeepscode@gmail.com">Contact</a>
             </button>
